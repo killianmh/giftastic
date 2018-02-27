@@ -1,0 +1,16 @@
+div{
+border: solid 1px black;
+}
+
+.itemBtn{
+	margin: 5px;
+}
+
+.currentItemGifs{
+	margin: 0 auto;
+	width: 890px;
+}
+
+.stillGif{
+	margin-left: 10px;
+}

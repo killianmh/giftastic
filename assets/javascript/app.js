@@ -11,9 +11,9 @@ var gifs = {
 		url: queryURL,
 		method: "GET",
 		}).then(function(response){
-		console.log(response);
+			console.log(response);
 
-		gifs.populateGifArray(response);
+			gifs.populateGifArray(response);
 
 		// console.log(response.data[0].id);
 
@@ -31,21 +31,32 @@ var gifs = {
 
 	displayStaticGifs: function(responseArray){
 		for(i = 0; i<10; i++){
-			var url = responseArray.data[i].images.fixed_width_still.url;
+			// var url = responseArray.data[i].images.fixed_width_still.url;
+			var url = this.gifArray[i].images.fixed_width_still.url;
 			var img = $("<img class = 'stillGif'>");
 			img.attr("src",url);
 			img.attr("data-name",i);
+			img.attr("data-anim",false);
 			$(".currentItemGifs").append(img);
 		};
-		this.animateGif();
+		this.startStopGif();
 		
 	},
 
-	animateGif: function(){
-		$(".stillGif").on("click",function(){
-			var index = $(this).attr("data-name");
-			var animURL = gifs.gifArray[index].images.fixed_width.url
-			$(this).attr("src", animURL);
+	startStopGif: function(){
+		$("img").on("click", function(){
+			if($(this).attr("data-anim") === "false"){
+				$(this).attr("data-anim",true);
+				var index = $(this).attr("data-name");
+				var animURL = gifs.gifArray[index].images.fixed_width.url
+				$(this).attr("src", animURL);
+			}
+			else{
+				$(this).attr("data-anim",false);
+				var index = $(this).attr("data-name");
+				var animURL = gifs.gifArray[index].images.fixed_width_still.url
+				$(this).attr("src", animURL);
+			}
 		})
 	},
 

@@ -1,16 +1,59 @@
-div{
+/*div{
 border: solid 1px black;
+}*/
+
+body{
+	background-color: #B83B23;
+	background-size: auto;
+	background-position: center;
+}
+
+.headingRow{
+	margin-top: 20px;
+}
+
+.title{
+	font-size: 60px;
+}
+
+input[type="text"] {
+    font-size:40px;
+}
+
+.submitBtn {
+	width: 150px;
+	height: 50px;
+	font-size: 30px;
 }
 
 .itemBtn{
 	margin: 5px;
 }
 
+.userButtons{
+	height: 60px;
+}
+
 .currentItemGifs{
-	margin: 0 auto;
-	width: 890px;
+	/*margin: 0 auto;*/
+	width: 100%;
 }
 
 .stillGif{
-	margin-left: 10px;
+	margin: 0px;
+	/*margin-left: 10px;*/
+}
+
+.caption{
+	width: 200px;
+}
+
+.thumbnail{
+	margin-bottom: 10px;
+	margin-left: 21px;
+	float: left;
+}
+
+.displayGifRow2 .thumbnail:first-child {
+	margin-left: 252px;
 }
